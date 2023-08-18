@@ -10,6 +10,8 @@ Before you begin, ensure you have the following:
 
 2. **kubectl**: Make sure you have the `kubectl` command-line tool installed and configured to communicate with your Kubernetes cluster.
 
+3. **Docker**: You'll need Docker installed to build and run containerized applications.
+
 ## Getting Started
 
 1. Clone this repository to your local machine:
@@ -47,25 +49,28 @@ The repository has the following structure:
 - **kubernetes/**: Directory containing Kubernetes manifest files.
 - **images/**: Directory containing images used in this README.
 
+## Tags
+
+- [ClickHouse](https://clickhouse.tech/): A popular open-source columnar database management system.
+- [Kubernetes](https://kubernetes.io/): A powerful container orchestration platform.
+- [Docker](https://www.docker.com/): A platform for developing, shipping, and running applications in containers.
+
 ## Visual Steps
 
 Here are some visual steps to help you navigate the process:
 
 ### Step 1: Clone the Repository
 
-![Clone Repo](images/clone_repo.png)
 
 ### Step 2: Deploy the Application
 
 Open a terminal and navigate to the repository's directory. Run the `init.sh` script.
 
-![Deploy](images/deploy.png)
 
 ### Step 3: Remove the Deployment
 
 To remove the deployment, run the `remove.sh` script.
 
-![Remove](images/remove.png)
 
 ## Conclusion
 
