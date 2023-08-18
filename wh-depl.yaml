@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clickhouse-deployment
+spec:
+  replicas: 3  # Change this number to the desired maximum number of replicas
+  selector:
+    matchLabels:
+      app: clickhouse
+  template:
+    metadata:
+      labels:
+        app: clickhouse
+    spec:
+      containers:
+        - name: clickhouse-server
+          image: yandex/clickhouse-server:latest  # Replace with the desired ClickHouse image
+          ports:
+            - containerPort: 8123  # ClickHouse port
+          env:
+            - name: CLICKHOUSE_CONFIG
+              value: /etc/clickhouse-server/config.xml
+            - name: CLICKHOUSE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: clickhouse-secret
+                  key: CLICKHOUSE_PASSWORD
+            - name: CLICKHOUSE_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: clickhouse-secret
+                  key: CLICKHOUSE_DATABASE
+            - name: CLICKHOUSE_USER
+              valueFrom:
+                secretKeyRef:
+                  name: clickhouse-secret
+                  key: CLICKHOUSE_USER
+          volumeMounts:
+            - name: clickhouse-pvc
+              mountPath: /etc/clickhouse-server/config.d
+      volumes:
+        - name: clickhouse-pvc              
+      
