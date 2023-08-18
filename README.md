@@ -17,7 +17,7 @@ Before you begin, ensure you have the following:
 1. Clone this repository to your local machine:
 
     ```
-    git clone https://github.com/yourusername/kubernetes-repo-example.git
+    git clone https://github.com/Amjadshuk/Kubernetes.git
     cd kubernetes-repo-example
     ```
 
@@ -74,6 +74,6 @@ To remove the deployment, run the `remove.sh` script.
 
 ## Conclusion
 
-You've successfully deployed and managed an application using Kubernetes! If you encounter any issues or have questions, feel free to [create an issue](https://github.com/yourusername/kubernetes-repo-example/issues) in this repository.
+You've successfully deployed and managed an application using Kubernetes! If you encounter any issues or have questions, feel free to [create an issue](https://github.com/Amjadshuk/Kubernetes/issues) in this repository.
 
 Happy Kubernetes-ing!
